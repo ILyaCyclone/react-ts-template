@@ -1,0 +1,36 @@
+import React, {useEffect, useState} from "react";
+
+interface Props {
+    initialName?: string
+    initialCounter?: number
+}
+
+const Greeter: React.FC<Props> = ({initialName, initialCounter = 0}) => {
+    const [name, setName] = useState<string>(initialName || "");
+    const [greeting, setGreeting] = useState<string>();
+    const [counter, setCounter] = useState<number>(initialCounter);
+
+    useEffect(() => {
+        updateGreeting()
+    }, []);
+
+    const updateName = (e: React.ChangeEvent<HTMLInputElement>): void => setName(e.target.value);
+
+    const updateGreeting = (): void => setGreeting(name ? `Hello ${name}` : "");
+
+    const greet = (): void => {
+        setCounter(counter + 1);
+        updateGreeting();
+    }
+
+    return (
+        <div>
+            <input value={name} onChange={updateName} type="text"/>
+            <button onClick={greet}>Greet</button>
+            <p>{greeting}</p>
+            <p>Called <b>{counter}</b> times</p>
+        </div>
+    )
+}
+
+export default Greeter;
