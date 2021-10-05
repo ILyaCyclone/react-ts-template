@@ -1,0 +1,6 @@
+# node_modules is ignored by default
+
+.idea/
+
+package-lock.json
+dist/

@@ -7,7 +7,7 @@ export default class Greeter {
     // https://blog.saeloun.com/2021/06/24/babel-enables-class-field-and-private-methods.html
     static readonly DEFAULT_NAME = "stranger";
 
-    private count : number = 0;
+    private count = 0;
 
     sayHello = (name: string = Greeter.DEFAULT_NAME ) : string => {
         this.count++;
