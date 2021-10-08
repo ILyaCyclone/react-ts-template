@@ -25,10 +25,10 @@ const Greeter: React.FC<Props> = ({initialName, initialCounter = 0}) => {
 
     return (
         <div>
-            <input value={name} onChange={updateName} type="text"/>
-            <button onClick={greet}>Greet</button>
-            <p>{greeting}</p>
-            <p>Called <b>{counter}</b> times</p>
+            <input className={"name-input"} value={name} onChange={updateName} type="text"/>
+            <button className={"greet-btn"} onClick={greet}>Greet</button>
+            <p className={"greeting"}>{greeting}</p>
+            <p>Called <b className={"count"}>{counter}</b> times</p>
         </div>
     )
 }
