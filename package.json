@@ -19,7 +19,12 @@
     "ts-example:start_js": "node dist/index_js.js",
     "ts-example:build": "npm run clean && babel ./src/ts-example --extensions \".ts,.tsx,.js,.jsx\" --out-dir dist",
     "storybook": "start-storybook -p 6006",
-    "storybook:build": "build-storybook"
+    "storybook:build": "build-storybook",
+    "loki": "loki test --targetFilter=chrome.app",
+    "loki:update": "loki update --targetFilter=chrome.app",
+    "loki-docker": "loki test --targetFilter=chrome.docker --chromeDockerImage=yukinying/chrome-headless-browser:90.0.4408.0",
+    "loki-docker:update": "loki update --targetFilter=chrome.docker --chromeDockerImage=yukinying/chrome-headless-browser:90.0.4408.0",
+    "loki:approve": "loki approve"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -54,6 +59,7 @@
     "jest": "^27.2.5",
     "jsdom": "^18.0.0",
     "jsdom-global": "^3.0.2",
+    "loki": "^0.28.1",
     "rimraf": "^3.0.2",
     "typescript": "^4.4.3",
     "webpack": "^5.56.1",
