@@ -1,6 +1,10 @@
 # node_modules is ignored by default
 package-lock.json
 dist/
+
 coverage/
+
+src/storybook-example/
+storybook-static/
 
 .idea/
